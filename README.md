@@ -1,99 +1,154 @@
-# 📚 EduAI: AI-Powered Smart Learning Assistant  
+# 📚 LearnMate AI: AI-Powered Personalized Learning Platform  
 
-**EduAI** is an intelligent **learning companion** that leverages **Machine Learning (ML) and Deep Learning (DL)** to provide a **personalized study experience, AI-driven tutoring, and productivity tracking**.  
+**LearnMate AI** is an intelligent **AI-driven learning platform** that uses **Machine Learning and Data Analytics** to provide a **personalized study experience, smart course recommendations, and productivity tracking**.
 
-🔍 **Project Type:** AI/ML-based Smart Learning App  
+🔍 **Project Type:** AI/ML-based Smart Learning Platform  
 📌 **Status:** Active Development  
-📊 **Tech Stack:** Flutter, Python (Flask, Pandas, Sklearn, TensorFlow), Firebase  
+📊 **Tech Stack:** Flutter, Python (Flask, Pandas, Scikit-learn), Machine Learning  
 
 ---
 
-## 🚀 Overview  
+# 🚀 Overview  
 
-EduAI adapts to the user's **learning preferences** and optimizes their study experience using:  
-- **ML-based Learning Style Prediction**  
-- **AI-powered Doubt Resolution with GPT-2**  
-- **Personalized Course & Study Material Recommendations**  
-- **Focus Mode for Time Tracking & Productivity Insights**  
+LearnMate AI analyzes user learning behavior and adapts study recommendations based on individual learning styles.
 
----
+The system provides:
 
-## 🔬 Applied Machine Learning Models  
+- 📊 **ML-based Learning Style Prediction**
+- 🎯 **Personalized Course Recommendations**
+- 📚 **Adaptive Study Material Suggestions**
+- ⏱ **Focus Mode for Productivity Tracking**
+- 📈 **Learning Behavior Analysis**
 
-### ✅ **1. Learning Style Predictor**  
-- **Model Used:** **Random Forest Classifier**  
-- **Objective:** Categorizes users into one of four learning styles: **Visual, Auditory, Reading/Writing, Kinesthetic (VARK)**.  
-- **Dataset:** User response dataset with learning behavior patterns.  
-- **Results:** Achieved **95% accuracy** in learning style classification.  
+This helps students improve their learning efficiency and study patterns.
 
 ---
 
-### ✅ **2. Smart Recommendation System**  
-- **Model Used:** **Hybrid Model (TF-IDF, SVD, Neural Networks)**  
-- **Objective:** Suggests **courses & study materials** based on:  
-  - Subject preferences  
-  - Difficulty level  
-  - Past interactions  
-- **Implementation:** Combines **content-based filtering** and **collaborative filtering**.  
+# 🔬 Applied Machine Learning Models  
 
+## ✅ 1. Learning Style Prediction  
 
----
+- **Model Used:** Random Forest Classifier  
+- **Objective:** Predicts a student's preferred learning style using the **VARK Model**.
 
-### ✅ **3. AI Tutor (Doubt Solver)**  
-- **Model Used:** **Fine-tuned GPT-2 (PyTorch)**  
-- **Objective:** Provides **instant doubt resolution, explanations, and interactive learning assistance**.  
-- **Training Data:** SQuAD v2 dataset for Q&A fine-tuning.  
-- **Implementation:**  
-  - **Preprocessing:** Tokenized using GPT-2 tokenizer.  
-  - **Fine-tuning:** PyTorch-based training on **Google Colab**.  
-  - **Inference:** Deployed as a chatbot API.  
-- **Results:** Generated **context-aware answers**.
+Learning styles predicted:
+
+- Visual  
+- Auditory  
+- Reading/Writing  
+- Kinesthetic  
+
+**Dataset Used:** Learning behavior dataset containing user study preferences.
+
+**Result:** Achieved high accuracy in learning style classification.
 
 ---
 
-### ✅ **4. Focus Mode & Productivity Tracker**  
-- **Model Used:** **Logistic Regression & Time-Series Analysis**  
-- **Objective:** Helps users track focused study time and analyze **productivity trends**.  
-- **Implementation:**  
-  - **Time tracking with user session data**  
-  - **Prediction of optimal study duration**  
-  - **Analysis of focus patterns**  
+## ✅ 2. Smart Course Recommendation System  
 
+- **Model Used:** Hybrid Recommendation System  
 
----
+Techniques Used:
 
-## 📊 Experiment Tracking  
+- TF-IDF  
+- Collaborative Filtering  
+- Content-based Filtering  
 
-| Model | Accuracy | Dataset Used | Key Features |  
-|--------|---------|--------------|--------------|  
-| Learning Style Predictor | 95% | Learning Behavior Dataset | Categorizes into VARK styles |  
-| Recommendation System | | Course Interaction Data | Hybrid ML model for suggestions |  
-| AI Tutor | | SQuAD v2 | Fine-tuned GPT-2 chatbot |  
+**Objective:** Suggests personalized courses and learning materials based on:
 
+- User learning style  
+- Course difficulty level  
+- Previous learning interactions  
 
 ---
 
-## 📽️ Live Demo  
+## ✅ 3. Productivity & Focus Tracking  
 
-[![Watch the Demo](https://img.youtube.com/vi/mJapxqfsXks/0.jpg)](https://www.youtube.com/watch?v=mJapxqfsXks)  
+- **Model Used:** Logistic Regression + Time Analysis  
 
-Click the image above to watch EduAI in action!  
+**Objective:** Helps students monitor their study sessions and productivity.
 
----
+Features include:
 
-## 🛠 Tech Stack  
-
-📌 **Frontend:** Flutter (Dart)  
-📌 **Machine Learning & Backend:** Python, Flask, Pandas, Scikit-learn, TensorFlow, PyTorch  
-📌 **API Integrations:**  
-   - **YouTube API** (Educational Content)  
-   - **Chatbot API** (AI Tutor)  
-   - **Firebase** (Data Management & Authentication)  
+- Study time tracking  
+- Focus session monitoring  
+- Productivity pattern analysis  
 
 ---
 
-## 📌 How to Run  
+# 📊 Experiment Tracking  
 
-1️⃣ **Clone the repository:**  
+| Model | Purpose | Dataset |
+|------|--------|--------|
+| Learning Style Predictor | Predict student learning style | Learning Behavior Dataset |
+| Recommendation System | Suggest learning resources | Course Interaction Dataset |
+| Focus Tracker | Analyze study productivity | User session data |
+
+---
+
+# 🛠 Tech Stack  
+
+### Frontend
+Flutter (Dart)
+
+### Backend & Machine Learning
+Python  
+Flask  
+Pandas  
+Scikit-learn  
+
+### Data Storage
+CSV Dataset
+
+---
+
+# 📌 How to Run the Project  
+
+### 1️⃣ Clone the repository
+
 ```bash
-git clone https://github.com/HarshiSharma04/EduAI.git
+git clone https://github.com/Ommprakash9/learnmate-ai.git
+```
+
+### 2️⃣ Navigate to project directory
+
+```bash
+cd learnmate-ai
+```
+
+### 3️⃣ Install required Python libraries
+
+```bash
+pip install pandas scikit-learn flask
+```
+
+### 4️⃣ Run the backend server
+
+```bash
+python app.py
+```
+
+### 5️⃣ Run Flutter application
+
+```bash
+flutter run
+```
+
+---
+
+# 🌍 Sustainable Development Goal (SDG)
+
+This project contributes to:
+
+**SDG 4 – Quality Education**
+
+By providing personalized and intelligent learning support for students.
+
+---
+
+# 👨‍💻 Author
+
+**Omm Prakash Sahoo**  
+Web Developer  
+
+GitHub: https://github.com/Ommprakash9
