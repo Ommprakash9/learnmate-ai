@@ -148,7 +148,7 @@ By providing personalized and intelligent learning support for students.
 
 # 👨‍💻 Author
 
-**Omm Prakash Sahoo**
+**Omm Prakash Sahoo** &
 **Khushi Mandal**
 Web Developer  
 
