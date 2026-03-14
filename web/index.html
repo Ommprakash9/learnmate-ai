@@ -1,57 +1,158 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>LearnMate AI</title>
+
 <style>
+
 body{
-font-family:Arial;
-background:#0b1a2b;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
+margin:0;
 text-align:center;
-padding-top:120px;
 }
 
-.box{
+header{
+padding:40px;
+font-size:32px;
+font-weight:bold;
+}
+
+.subtitle{
+font-size:18px;
+margin-bottom:40px;
+color:#d9e6ff;
+}
+
+.container{
 max-width:700px;
 margin:auto;
-background:#12263a;
-padding:30px;
-border-radius:10px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.3);
 }
 
-a{
-color:#4da6ff;
-font-size:18px;
+.inputs{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+margin-top:20px;
 }
+
+input{
+padding:12px;
+border-radius:6px;
+border:none;
+font-size:16px;
+text-align:center;
+}
+
+button{
+margin-top:30px;
+padding:14px 28px;
+background:#4da6ff;
+border:none;
+color:white;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#2d8cff;
+transform:scale(1.05);
+}
+
+#result{
+margin-top:30px;
+font-size:22px;
+font-weight:bold;
+color:#7fffbe;
+}
+
+.footer{
+margin-top:60px;
+font-size:14px;
+color:#cfd9ff;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="box">
+<header>
+LearnMate AI
+</header>
 
-<h1>LearnMate AI</h1>
-<h3>AI Powered Personalized Learning Platform</h3>
+<div class="subtitle">
+AI Powered Personalized Learning Platform
+</div>
 
-<p>
-LearnMate AI is a machine learning based system that predicts student learning styles
-and provides personalized learning recommendations.
-</p>
+<div class="container">
 
-<p>
-Developed by:<br>
-<b>Omm Prakash Sahoo</b><br>
-Odisha University of Technology and Research, Bhubaneswar
-</p>
+<h2>Predict Your Learning Style</h2>
 
-<p>
-Project Repository:<br>
-<a href="https://github.com/Ommprakash9/learnmate-ai">
-https://github.com/Ommprakash9/learnmate-ai
-</a>
-</p>
+<p>Enter values (0 or 1) based on your learning preference</p>
+
+<div class="inputs">
+
+<input id="f1" placeholder="Visual Learning">
+<input id="f2" placeholder="Auditory Learning">
+<input id="f3" placeholder="Reading/Writing">
+<input id="f4" placeholder="Kinesthetic Learning">
 
 </div>
+
+<button onclick="predict()">Predict Learning Style</button>
+
+<div id="result"></div>
+
+</div>
+
+<div class="footer">
+Developed by Omm Prakash Sahoo  
+<br>
+AI Powered Smart Learning Assistant
+</div>
+
+<script>
+
+async function predict(){
+
+const f1=document.getElementById("f1").value
+const f2=document.getElementById("f2").value
+const f3=document.getElementById("f3").value
+const f4=document.getElementById("f4").value
+
+const response=await fetch("https://learnmate-ai-ndmn.onrender.com/predict",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+features:[Number(f1),Number(f2),Number(f3),Number(f4)]
+})
+
+})
+
+const data=await response.json()
+
+document.getElementById("result").innerText=
+"Predicted Learning Style: "+data.learning_style
+
+}
+
+</script>
 
 </body>
 </html>
