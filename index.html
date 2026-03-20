@@ -8,57 +8,95 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-height:100vh;
-background: radial-gradient(circle at top, #1f3b73, #0b1a2b);
+background:#0b1a2b;
 color:white;
+}
+
+/* NAVBAR */
+nav{
 display:flex;
-flex-direction:column;
-align-items:center;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+}
+
+nav h2{color:#4da6ff;}
+nav a{
+margin-left:20px;
+color:white;
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px;
+background:radial-gradient(circle,#1f3b73,#0b1a2b);
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#ccc;
+margin-bottom:20px;
+}
+
+.hero button{
+padding:12px 25px;
+border:none;
+background:#4da6ff;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* FEATURES */
+.features{
+display:flex;
 justify-content:center;
-}
-
-/* GLASS EFFECT */
-.container{
-display:flex;
 gap:30px;
-backdrop-filter: blur(15px);
-background: rgba(255,255,255,0.05);
-border-radius:20px;
-padding:40px;
-box-shadow:0 0 40px rgba(0,0,0,0.4);
+padding:60px;
 }
 
-/* LEFT CARD */
-.card{
-background: rgba(255,255,255,0.05);
-padding:25px;
+.feature{
+background:#12263a;
+padding:20px;
 border-radius:15px;
-width:320px;
+width:250px;
 transition:0.3s;
 }
 
-.card:hover{
-transform: translateY(-5px);
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+.feature:hover{
+transform:translateY(-5px);
 }
 
-h1{
-margin-bottom:10px;
-font-size:36px;
-text-shadow:0 0 10px rgba(77,166,255,0.6);
+/* DEMO */
+.demo{
+padding:60px;
+text-align:center;
 }
 
-.subtitle{
-margin-bottom:30px;
-color:#ccc;
+.container{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+}
+
+.card{
+background:#12263a;
+padding:25px;
+border-radius:15px;
+width:320px;
 }
 
 /* INPUT */
@@ -68,53 +106,37 @@ padding:12px;
 margin:10px 0;
 border-radius:8px;
 border:none;
-outline:none;
-background: rgba(255,255,255,0.1);
+background:#1f3b73;
 color:white;
 }
 
 /* BUTTON */
 button{
-width:100%;
-padding:14px;
-margin-top:10px;
+padding:12px;
 border:none;
-border-radius:10px;
-background: linear-gradient(45deg,#4da6ff,#00c6ff);
+background:#4da6ff;
 color:white;
-font-size:16px;
+border-radius:8px;
 cursor:pointer;
-transition:0.3s;
 }
 
-button:hover{
-transform: scale(1.05);
-box-shadow:0 0 15px #4da6ff;
-}
-
-/* RESULT */
 #result{
-margin-top:15px;
-font-weight:bold;
-font-size:18px;
+margin-top:10px;
 color:#00ffcc;
 }
 
-/* RIGHT SIDE */
-.info{
-width:320px;
-line-height:1.6;
-}
-
-.info h3{
-margin-bottom:10px;
-}
-
-.footer{
-margin-top:40px;
-color:#aaa;
-font-size:14px;
+/* ABOUT */
+.about{
+padding:60px;
 text-align:center;
+color:#ccc;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:#12263a;
 }
 
 </style>
@@ -122,43 +144,92 @@ text-align:center;
 
 <body>
 
-<h1>LearnMate AI</h1>
-<p class="subtitle">AI Powered Personalized Learning Platform</p>
+<!-- NAVBAR -->
+<nav>
+<h2>LearnMate AI</h2>
+<div>
+<a href="#">Home</a>
+<a href="#features">Features</a>
+<a href="#demo">Demo</a>
+<a href="#about">About</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>AI Powered Learning Platform</h1>
+<p>Personalized learning using Machine Learning</p>
+<button onclick="document.getElementById('demo').scrollIntoView()">Try Demo</button>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+
+<div class="feature">
+<h3>🎯 Smart Prediction</h3>
+<p>Predict your learning style using ML models</p>
+</div>
+
+<div class="feature">
+<h3>📊 Personalized Learning</h3>
+<p>Customized recommendations based on behavior</p>
+</div>
+
+<div class="feature">
+<h3>⚡ Fast & Accurate</h3>
+<p>High accuracy ML model for real-time results</p>
+</div>
+
+</section>
+
+<!-- DEMO -->
+<section class="demo" id="demo">
+
+<h2>Try AI Demo</h2>
 
 <div class="container">
 
 <div class="card">
-
-<h3>Predict Learning Style</h3>
 
 <input id="f1" placeholder="Visual (0 or 1)">
 <input id="f2" placeholder="Auditory (0 or 1)">
 <input id="f3" placeholder="Reading (0 or 1)">
 <input id="f4" placeholder="Kinesthetic (0 or 1)">
 
-<button onclick="predict()">Run AI Prediction</button>
+<button onclick="predict()">Predict</button>
 
 <div id="result"></div>
 
 </div>
 
-<div class="info">
+<div class="card">
 
 <h3>Learning Styles</h3>
-
-<p><b>Visual:</b> Learns through images, charts.</p>
-<p><b>Auditory:</b> Learns through listening.</p>
-<p><b>Reading/Writing:</b> Prefers notes & text.</p>
-<p><b>Kinesthetic:</b> Hands-on learning.</p>
-
-</div>
+<p>Visual → Images</p>
+<p>Auditory → Listening</p>
+<p>Reading → Text</p>
+<p>Kinesthetic → Practice</p>
 
 </div>
 
-<div class="footer">
-Developed by <b>Omm Prakash Sahoo</b><br>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<h2>About Project</h2>
+<p>
+LearnMate AI is an AI-powered personalized learning system based on SDG 4 (Quality Education).
+It analyzes student preferences and suggests optimal learning strategies.
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+Developed by Omm Prakash Sahoo<br>
 Odisha University of Technology and Research
-</div>
+</footer>
 
 <script>
 
@@ -172,11 +243,7 @@ const f4=document.getElementById("f4").value
 const response=await fetch("https://learnmate-ai-ndmn.onrender.com/predict",{
 
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
 features:[Number(f1),Number(f2),Number(f3),Number(f4)]
 })
@@ -186,7 +253,7 @@ features:[Number(f1),Number(f2),Number(f3),Number(f4)]
 const data=await response.json()
 
 document.getElementById("result").innerText =
-"✨ Predicted: " + data.learning_style
+"Prediction: " + data.learning_style
 
 }
 
